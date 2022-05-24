@@ -1,0 +1,1281 @@
+.root {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 1250px;
+}
+
+.ripple {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ripple > .top {
+  width: calc(45% - 3.75px);
+}
+
+.ripple > .bottom {
+  width: calc(45% - 3.75px);
+}
+
+.ripple-left-cap {
+  transform-origin: center;
+  transform: translateX(-7.5px) rotateY(90deg);
+  height: 15px;
+  width: 15px;
+  background-color: #1b0096;
+}
+
+.ripple-right-cap {
+  transform-origin: center;
+  transform: translateX(7.5px) rotateY(90deg);
+  height: 15px;
+  width: 15px;
+  background-color: #1b0096;
+}
+
+.ripple-square {
+  position: relative;
+  transform-origin: center;
+  min-height: 15px;
+  min-width: 100px;
+  animation: ripple 5s linear infinite forwards;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@keyframes ripple {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+.root > .ripple-square:nth-of-type(1) {
+  animation-delay: 0s;
+}
+
+.root > .ripple-square:nth-of-type(1) .top {
+  background-color: red;
+}
+
+.root > .ripple-square:nth-of-type(1) .bottom {
+  background-color: green;
+}
+
+.root > .ripple-square:nth-of-type(1) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(1) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(1) .top::after {
+  border-top: 7.5px solid red;
+  border-bottom: 7.5px solid red;
+  border-right: 7.5px solid transparent;
+}
+
+.root > .ripple-square:nth-of-type(1) .bottom::before {
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  border-right: 7.5px solid green;
+}
+
+.root > .ripple-square:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+
+.root > .ripple-square:nth-of-type(2) .top {
+  background-color: red;
+}
+
+.root > .ripple-square:nth-of-type(2) .bottom {
+  background-color: green;
+}
+
+.root > .ripple-square:nth-of-type(2) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(2) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(2) .top::after {
+  border-top: 7.5px solid red;
+  border-bottom: 7.5px solid red;
+  border-right: 7.5px solid transparent;
+}
+
+.root > .ripple-square:nth-of-type(2) .bottom::before {
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  border-right: 7.5px solid green;
+}
+
+.root > .ripple-square:nth-of-type(3) {
+  animation-delay: 0.4s;
+}
+
+.root > .ripple-square:nth-of-type(3) .top {
+  background-color: deepskyblue;
+}
+
+.root > .ripple-square:nth-of-type(3) .bottom {
+  background-color: yellow;
+}
+
+.root > .ripple-square:nth-of-type(3) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(3) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(3) .top::after {
+  background: deepskyblue;
+  width: 15px;
+  height: 15px;
+  left: calc(45% - 7.5px);
+  mask-image: radial-gradient(circle at 100% 50%, transparent 50%, deepskyblue 50%);
+}
+
+.root > .ripple-square:nth-of-type(3) .bottom::before {
+  background: yellow;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.root > .ripple-square:nth-of-type(4) {
+  animation-delay: 0.6s;
+}
+
+.root > .ripple-square:nth-of-type(4) .top {
+  background-color: yellow;
+}
+
+.root > .ripple-square:nth-of-type(4) .bottom {
+  background-color: deepskyblue;
+}
+
+.root > .ripple-square:nth-of-type(4) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(4) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(4) .top::after {
+  background: yellow;
+  width: 15px;
+  height: 15px;
+  left: calc(45% - 11.25px);
+  border-radius: 50%;
+}
+
+.root > .ripple-square:nth-of-type(4) .bottom::before {
+  background: deepskyblue;
+  width: 15px;
+  height: 15px;
+  transform: translateX(-11.25px);
+  mask-image: radial-gradient(circle at 0% 50%, transparent 50%, deepskyblue 50%);
+}
+
+.root > .ripple-square:nth-of-type(5) {
+  animation-delay: 0.8s;
+}
+
+.root > .ripple-square:nth-of-type(5) .top {
+  background-color: green;
+}
+
+.root > .ripple-square:nth-of-type(5) .bottom {
+  background-color: red;
+}
+
+.root > .ripple-square:nth-of-type(5) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(5) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(5) .top::after {
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  border-left: 7.5px solid green;
+}
+
+.root > .ripple-square:nth-of-type(5) .bottom::before {
+  border-top: 7.5px solid red;
+  border-bottom: 7.5px solid red;
+  border-left: 7.5px solid transparent;
+}
+
+.root > .ripple-square:nth-of-type(6) {
+  animation-delay: 1s;
+}
+
+.root > .ripple-square:nth-of-type(6) .top {
+  background-color: deepskyblue;
+}
+
+.root > .ripple-square:nth-of-type(6) .bottom {
+  background-color: yellow;
+}
+
+.root > .ripple-square:nth-of-type(6) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(6) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(6) .top::after {
+  background: deepskyblue;
+  width: 15px;
+  height: 15px;
+  left: calc(45% - 7.5px);
+  mask-image: radial-gradient(circle at 100% 50%, transparent 50%, deepskyblue 50%);
+}
+
+.root > .ripple-square:nth-of-type(6) .bottom::before {
+  background: yellow;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.root > .ripple-square:nth-of-type(7) {
+  animation-delay: 1.2s;
+}
+
+.root > .ripple-square:nth-of-type(7) .top {
+  background-color: yellow;
+}
+
+.root > .ripple-square:nth-of-type(7) .bottom {
+  background-color: deepskyblue;
+}
+
+.root > .ripple-square:nth-of-type(7) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(7) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(7) .top::after {
+  background: yellow;
+  width: 15px;
+  height: 15px;
+  left: calc(45% - 11.25px);
+  border-radius: 50%;
+}
+
+.root > .ripple-square:nth-of-type(7) .bottom::before {
+  background: deepskyblue;
+  width: 15px;
+  height: 15px;
+  transform: translateX(-11.25px);
+  mask-image: radial-gradient(circle at 0% 50%, transparent 50%, deepskyblue 50%);
+}
+
+.root > .ripple-square:nth-of-type(8) {
+  animation-delay: 1.4s;
+}
+
+.root > .ripple-square:nth-of-type(8) .top {
+  background-color: deepskyblue;
+}
+
+.root > .ripple-square:nth-of-type(8) .bottom {
+  background-color: yellow;
+}
+
+.root > .ripple-square:nth-of-type(8) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(8) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(8) .top::after {
+  background: deepskyblue;
+  width: 15px;
+  height: 15px;
+  left: calc(45% - 7.5px);
+  mask-image: radial-gradient(circle at 100% 50%, transparent 50%, deepskyblue 50%);
+}
+
+.root > .ripple-square:nth-of-type(8) .bottom::before {
+  background: yellow;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.root > .ripple-square:nth-of-type(9) {
+  animation-delay: 1.6s;
+}
+
+.root > .ripple-square:nth-of-type(9) .top {
+  background-color: green;
+}
+
+.root > .ripple-square:nth-of-type(9) .bottom {
+  background-color: red;
+}
+
+.root > .ripple-square:nth-of-type(9) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(9) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(9) .top::after {
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  border-left: 7.5px solid green;
+}
+
+.root > .ripple-square:nth-of-type(9) .bottom::before {
+  border-top: 7.5px solid red;
+  border-bottom: 7.5px solid red;
+  border-left: 7.5px solid transparent;
+}
+
+.root > .ripple-square:nth-of-type(10) {
+  animation-delay: 1.8s;
+}
+
+.root > .ripple-square:nth-of-type(10) .top {
+  background-color: deepskyblue;
+}
+
+.root > .ripple-square:nth-of-type(10) .bottom {
+  background-color: yellow;
+}
+
+.root > .ripple-square:nth-of-type(10) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(10) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(10) .top::after {
+  background: deepskyblue;
+  width: 15px;
+  height: 15px;
+  left: calc(45% - 7.5px);
+  mask-image: radial-gradient(circle at 100% 50%, transparent 50%, deepskyblue 50%);
+}
+
+.root > .ripple-square:nth-of-type(10) .bottom::before {
+  background: yellow;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.root > .ripple-square:nth-of-type(11) {
+  animation-delay: 2s;
+}
+
+.root > .ripple-square:nth-of-type(11) .top {
+  background-color: green;
+}
+
+.root > .ripple-square:nth-of-type(11) .bottom {
+  background-color: red;
+}
+
+.root > .ripple-square:nth-of-type(11) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(11) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(11) .top::after {
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  border-left: 7.5px solid green;
+}
+
+.root > .ripple-square:nth-of-type(11) .bottom::before {
+  border-top: 7.5px solid red;
+  border-bottom: 7.5px solid red;
+  border-left: 7.5px solid transparent;
+}
+
+.root > .ripple-square:nth-of-type(12) {
+  animation-delay: 2.2s;
+}
+
+.root > .ripple-square:nth-of-type(12) .top {
+  background-color: deepskyblue;
+}
+
+.root > .ripple-square:nth-of-type(12) .bottom {
+  background-color: yellow;
+}
+
+.root > .ripple-square:nth-of-type(12) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(12) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(12) .top::after {
+  background: deepskyblue;
+  width: 15px;
+  height: 15px;
+  left: calc(45% - 7.5px);
+  mask-image: radial-gradient(circle at 100% 50%, transparent 50%, deepskyblue 50%);
+}
+
+.root > .ripple-square:nth-of-type(12) .bottom::before {
+  background: yellow;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.root > .ripple-square:nth-of-type(13) {
+  animation-delay: 2.4s;
+}
+
+.root > .ripple-square:nth-of-type(13) .top {
+  background-color: green;
+}
+
+.root > .ripple-square:nth-of-type(13) .bottom {
+  background-color: red;
+}
+
+.root > .ripple-square:nth-of-type(13) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(13) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(13) .top::after {
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  border-left: 7.5px solid green;
+}
+
+.root > .ripple-square:nth-of-type(13) .bottom::before {
+  border-top: 7.5px solid red;
+  border-bottom: 7.5px solid red;
+  border-left: 7.5px solid transparent;
+}
+
+.root > .ripple-square:nth-of-type(14) {
+  animation-delay: 2.6s;
+}
+
+.root > .ripple-square:nth-of-type(14) .top {
+  background-color: yellow;
+}
+
+.root > .ripple-square:nth-of-type(14) .bottom {
+  background-color: deepskyblue;
+}
+
+.root > .ripple-square:nth-of-type(14) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(14) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(14) .top::after {
+  background: yellow;
+  width: 15px;
+  height: 15px;
+  left: calc(45% - 11.25px);
+  border-radius: 50%;
+}
+
+.root > .ripple-square:nth-of-type(14) .bottom::before {
+  background: deepskyblue;
+  width: 15px;
+  height: 15px;
+  transform: translateX(-11.25px);
+  mask-image: radial-gradient(circle at 0% 50%, transparent 50%, deepskyblue 50%);
+}
+
+.root > .ripple-square:nth-of-type(15) {
+  animation-delay: 2.8s;
+}
+
+.root > .ripple-square:nth-of-type(15) .top {
+  background-color: red;
+}
+
+.root > .ripple-square:nth-of-type(15) .bottom {
+  background-color: green;
+}
+
+.root > .ripple-square:nth-of-type(15) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(15) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(15) .top::after {
+  border-top: 7.5px solid red;
+  border-bottom: 7.5px solid red;
+  border-right: 7.5px solid transparent;
+}
+
+.root > .ripple-square:nth-of-type(15) .bottom::before {
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  border-right: 7.5px solid green;
+}
+
+.root > .ripple-square:nth-of-type(16) {
+  animation-delay: 3s;
+}
+
+.root > .ripple-square:nth-of-type(16) .top {
+  background-color: yellow;
+}
+
+.root > .ripple-square:nth-of-type(16) .bottom {
+  background-color: deepskyblue;
+}
+
+.root > .ripple-square:nth-of-type(16) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(16) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(16) .top::after {
+  background: yellow;
+  width: 15px;
+  height: 15px;
+  left: calc(45% - 11.25px);
+  border-radius: 50%;
+}
+
+.root > .ripple-square:nth-of-type(16) .bottom::before {
+  background: deepskyblue;
+  width: 15px;
+  height: 15px;
+  transform: translateX(-11.25px);
+  mask-image: radial-gradient(circle at 0% 50%, transparent 50%, deepskyblue 50%);
+}
+
+.root > .ripple-square:nth-of-type(17) {
+  animation-delay: 3.2s;
+}
+
+.root > .ripple-square:nth-of-type(17) .top {
+  background-color: red;
+}
+
+.root > .ripple-square:nth-of-type(17) .bottom {
+  background-color: green;
+}
+
+.root > .ripple-square:nth-of-type(17) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(17) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(17) .top::after {
+  border-top: 7.5px solid red;
+  border-bottom: 7.5px solid red;
+  border-right: 7.5px solid transparent;
+}
+
+.root > .ripple-square:nth-of-type(17) .bottom::before {
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  border-right: 7.5px solid green;
+}
+
+.root > .ripple-square:nth-of-type(18) {
+  animation-delay: 3.4s;
+}
+
+.root > .ripple-square:nth-of-type(18) .top {
+  background-color: red;
+}
+
+.root > .ripple-square:nth-of-type(18) .bottom {
+  background-color: green;
+}
+
+.root > .ripple-square:nth-of-type(18) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(18) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(18) .top::after {
+  border-top: 7.5px solid red;
+  border-bottom: 7.5px solid red;
+  border-right: 7.5px solid transparent;
+}
+
+.root > .ripple-square:nth-of-type(18) .bottom::before {
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  border-right: 7.5px solid green;
+}
+
+.root > .ripple-square:nth-of-type(19) {
+  animation-delay: 3.6s;
+}
+
+.root > .ripple-square:nth-of-type(19) .top {
+  background-color: yellow;
+}
+
+.root > .ripple-square:nth-of-type(19) .bottom {
+  background-color: deepskyblue;
+}
+
+.root > .ripple-square:nth-of-type(19) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(19) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(19) .top::after {
+  background: yellow;
+  width: 15px;
+  height: 15px;
+  left: calc(45% - 11.25px);
+  border-radius: 50%;
+}
+
+.root > .ripple-square:nth-of-type(19) .bottom::before {
+  background: deepskyblue;
+  width: 15px;
+  height: 15px;
+  transform: translateX(-11.25px);
+  mask-image: radial-gradient(circle at 0% 50%, transparent 50%, deepskyblue 50%);
+}
+
+.root > .ripple-square:nth-of-type(20) {
+  animation-delay: 3.8s;
+}
+
+.root > .ripple-square:nth-of-type(20) .top {
+  background-color: deepskyblue;
+}
+
+.root > .ripple-square:nth-of-type(20) .bottom {
+  background-color: yellow;
+}
+
+.root > .ripple-square:nth-of-type(20) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(20) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(20) .top::after {
+  background: deepskyblue;
+  width: 15px;
+  height: 15px;
+  left: calc(45% - 7.5px);
+  mask-image: radial-gradient(circle at 100% 50%, transparent 50%, deepskyblue 50%);
+}
+
+.root > .ripple-square:nth-of-type(20) .bottom::before {
+  background: yellow;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.root > .ripple-square:nth-of-type(21) {
+  animation-delay: 4s;
+}
+
+.root > .ripple-square:nth-of-type(21) .top {
+  background-color: green;
+}
+
+.root > .ripple-square:nth-of-type(21) .bottom {
+  background-color: red;
+}
+
+.root > .ripple-square:nth-of-type(21) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(21) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(21) .top::after {
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  border-left: 7.5px solid green;
+}
+
+.root > .ripple-square:nth-of-type(21) .bottom::before {
+  border-top: 7.5px solid red;
+  border-bottom: 7.5px solid red;
+  border-left: 7.5px solid transparent;
+}
+
+.root > .ripple-square:nth-of-type(22) {
+  animation-delay: 4.2s;
+}
+
+.root > .ripple-square:nth-of-type(22) .top {
+  background-color: red;
+}
+
+.root > .ripple-square:nth-of-type(22) .bottom {
+  background-color: green;
+}
+
+.root > .ripple-square:nth-of-type(22) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(22) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(22) .top::after {
+  border-top: 7.5px solid red;
+  border-bottom: 7.5px solid red;
+  border-right: 7.5px solid transparent;
+}
+
+.root > .ripple-square:nth-of-type(22) .bottom::before {
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  border-right: 7.5px solid green;
+}
+
+.root > .ripple-square:nth-of-type(23) {
+  animation-delay: 4.4s;
+}
+
+.root > .ripple-square:nth-of-type(23) .top {
+  background-color: deepskyblue;
+}
+
+.root > .ripple-square:nth-of-type(23) .bottom {
+  background-color: yellow;
+}
+
+.root > .ripple-square:nth-of-type(23) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(23) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(23) .top::after {
+  background: deepskyblue;
+  width: 15px;
+  height: 15px;
+  left: calc(45% - 7.5px);
+  mask-image: radial-gradient(circle at 100% 50%, transparent 50%, deepskyblue 50%);
+}
+
+.root > .ripple-square:nth-of-type(23) .bottom::before {
+  background: yellow;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.root > .ripple-square:nth-of-type(24) {
+  animation-delay: 4.6s;
+}
+
+.root > .ripple-square:nth-of-type(24) .top {
+  background-color: green;
+}
+
+.root > .ripple-square:nth-of-type(24) .bottom {
+  background-color: red;
+}
+
+.root > .ripple-square:nth-of-type(24) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(24) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(24) .top::after {
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  border-left: 7.5px solid green;
+}
+
+.root > .ripple-square:nth-of-type(24) .bottom::before {
+  border-top: 7.5px solid red;
+  border-bottom: 7.5px solid red;
+  border-left: 7.5px solid transparent;
+}
+
+.root > .ripple-square:nth-of-type(25) {
+  animation-delay: 4.8s;
+}
+
+.root > .ripple-square:nth-of-type(25) .top {
+  background-color: yellow;
+}
+
+.root > .ripple-square:nth-of-type(25) .bottom {
+  background-color: deepskyblue;
+}
+
+.root > .ripple-square:nth-of-type(25) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(25) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(25) .top::after {
+  background: yellow;
+  width: 15px;
+  height: 15px;
+  left: calc(45% - 11.25px);
+  border-radius: 50%;
+}
+
+.root > .ripple-square:nth-of-type(25) .bottom::before {
+  background: deepskyblue;
+  width: 15px;
+  height: 15px;
+  transform: translateX(-11.25px);
+  mask-image: radial-gradient(circle at 0% 50%, transparent 50%, deepskyblue 50%);
+}
+
+.root > .ripple-square:nth-of-type(26) {
+  animation-delay: 5s;
+}
+
+.root > .ripple-square:nth-of-type(26) .top {
+  background-color: red;
+}
+
+.root > .ripple-square:nth-of-type(26) .bottom {
+  background-color: green;
+}
+
+.root > .ripple-square:nth-of-type(26) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(26) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(26) .top::after {
+  border-top: 7.5px solid red;
+  border-bottom: 7.5px solid red;
+  border-right: 7.5px solid transparent;
+}
+
+.root > .ripple-square:nth-of-type(26) .bottom::before {
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  border-right: 7.5px solid green;
+}
+
+.root > .ripple-square:nth-of-type(27) {
+  animation-delay: 5.2s;
+}
+
+.root > .ripple-square:nth-of-type(27) .top {
+  background-color: deepskyblue;
+}
+
+.root > .ripple-square:nth-of-type(27) .bottom {
+  background-color: yellow;
+}
+
+.root > .ripple-square:nth-of-type(27) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(27) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(27) .top::after {
+  background: deepskyblue;
+  width: 15px;
+  height: 15px;
+  left: calc(45% - 7.5px);
+  mask-image: radial-gradient(circle at 100% 50%, transparent 50%, deepskyblue 50%);
+}
+
+.root > .ripple-square:nth-of-type(27) .bottom::before {
+  background: yellow;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.root > .ripple-square:nth-of-type(28) {
+  animation-delay: 5.4s;
+}
+
+.root > .ripple-square:nth-of-type(28) .top {
+  background-color: deepskyblue;
+}
+
+.root > .ripple-square:nth-of-type(28) .bottom {
+  background-color: yellow;
+}
+
+.root > .ripple-square:nth-of-type(28) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(28) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(28) .top::after {
+  background: deepskyblue;
+  width: 15px;
+  height: 15px;
+  left: calc(45% - 7.5px);
+  mask-image: radial-gradient(circle at 100% 50%, transparent 50%, deepskyblue 50%);
+}
+
+.root > .ripple-square:nth-of-type(28) .bottom::before {
+  background: yellow;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.root > .ripple-square:nth-of-type(29) {
+  animation-delay: 5.6s;
+}
+
+.root > .ripple-square:nth-of-type(29) .top {
+  background-color: green;
+}
+
+.root > .ripple-square:nth-of-type(29) .bottom {
+  background-color: red;
+}
+
+.root > .ripple-square:nth-of-type(29) .top::after {
+  content: "";
+  position: absolute;
+  left: calc(45% - 3.75px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(29) .bottom::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-7.5px);
+  width: 0;
+  height: 0;
+}
+
+.root > .ripple-square:nth-of-type(29) .top::after {
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  border-left: 7.5px solid green;
+}
+
+.root > .ripple-square:nth-of-type(29) .bottom::before {
+  border-top: 7.5px solid red;
+  border-bottom: 7.5px solid red;
+  border-left: 7.5px solid transparent;
+}
+
+/*# sourceMappingURL=ripples.css.map */
