@@ -1,21 +1,44 @@
 @use "sass:math";
 $pi: 3.1415926536;
+
+/* math.atan($base * 0.1 * $pi * math.cos(0)) */
+
 @mixin sinosoid($name, $amp, $base) {
     @keyframes #{$name} {
         0% {
-            transform: translateZ(0px) rotateY(0deg);
+            transform: translateZ(0px) rotateY(math.atan(($base + 1) * 0.075 * $pi * math.cos(0)));
         }
         25% {
-            transform: translateZ(#{$amp}px);
+            transform: translateZ(#{$amp}px) rotateY(0deg);
         }
         50% {
-            transform: translateZ(0px);
+            transform: translateZ(0px) rotateY(math.atan( (-1) * ($base + 1) * 0.075 * $pi * math.cos(0)));
         }
         75% {
-            transform: translateZ(-#{$amp}px);
+            transform: translateZ(-#{$amp}px) rotateY(0deg);
         }
         100% {
-            transform: translateZ(0px);
+            transform: translateZ(0px) rotateY(math.atan(($base + 1) * 0.075 * $pi * math.cos(0)));
+        }
+    }
+}
+
+@mixin base-sinosoid($name) {
+    @keyframes #{$name} {
+        0% {
+            transform: rotateY(math.atan(6 * 0.075 * $pi * math.cos(0)));
+        }
+        25% {
+            transform: rotateY(0deg);
+        }
+        50% {
+            transform: rotateY(math.atan( (-1) * 6 * 0.075 * $pi * math.cos(0)));
+        }
+        75% {
+            transform: rotateY(0deg);
+        }
+        100% {
+            transform: rotateY(math.atan(6 * 0.075 * $pi * math.cos(0)));
         }
     }
 }
@@ -25,7 +48,7 @@ html, body {
     height: 100%;
     margin: 0;
     background: linear-gradient(#1a1477, #4e016d);
-    perspective: 2000px;
+    perspective: 3000px;
 }
 
 #root {
@@ -69,16 +92,18 @@ html, body {
     transform-style: preserve-3d;
 }
 
-@include sinosoid("sin-1", #{30 * math.sin(math.div(1, $pi))}, 1);
-@include sinosoid("sin-2", #{60 * math.sin(math.div(1, $pi))}, 2);
-@include sinosoid("sin-3", #{90 * math.sin(math.div(1, $pi))}, 3);
-@include sinosoid("sin-4", #{120 * math.sin(math.div(1, $pi))}, 4);
-@include sinosoid("sin-5", #{150 * math.sin(math.div(1, $pi))}, 5);
+@include sinosoid("sin-0", 0, 0);
+@include sinosoid("sin-1", 10, 1);
+@include sinosoid("sin-2", 20, 2);
+@include sinosoid("sin-3", 30, 3);
+@include sinosoid("sin-4", 40, 4);
+@include sinosoid("sin-5", 50, 5);
+@include base-sinosoid("base");
 
 /* The Sass for the 800 pixels of the flag */
 .flag-row-px {
-    height: 100%;
-    width: 100%;
+    height: 8px;
+    width: 16px;
     transform-style: preserve-3d;
     transform-origin: 0% 50%;
 
@@ -88,24 +113,80 @@ html, body {
         @if ($i <= 160 or $i >= 641) {
             &:nth-of-type(#{$i}) {
                 background-color: #73c2fb;
+                @if ($i % 40 == 0) {
+                    grid-column: 40;
+                    z-index: 40;
+                }
+                @else {
+                    grid-column: #{$i % 40} / span #{$i % 40 + 1};
+                    z-index: #{$i % 40};
+                }
+                @if ($i - 1 < 0) {
+                    grid-row: #{math.floor(math.div($i, 40)) + 1};
+                }
+                @else {
+                    grid-row: #{math.floor(math.div($i - 1, 40)) + 1};
+                }
             }
         }
         @else if ($i <= 320 or $i >= 481) {
             &:nth-of-type(#{$i}) {
                 background-color: #f19cbb;
+                @if ($i % 40 == 0) {
+                    grid-column: 40;
+                    z-index: 40;
+                }
+                @else {
+                    grid-column: #{$i % 40} / span #{$i % 40 + 1};
+                    z-index: #{$i % 40};
+                }
+
+                @if ($i - 1 < 0) {
+                    grid-row: #{math.floor(math.div($i, 40)) + 1};
+                }
+                @else {
+                    grid-row: #{math.floor(math.div($i - 1, 40)) + 1};
+                }
             }
         }
         @else {
             &:nth-of-type(#{$i}) {
                 background-color: #fff;
+                @if ($i % 40 == 0) {
+                    grid-column: 40;
+                    z-index: 40;
+                }
+                @else {
+                    grid-column: #{$i % 40} / span #{$i % 40 + 1};
+                    z-index: #{$i % 40};
+                }
+                @if ($i - 1 < 0) {
+                    grid-row: #{math.floor(math.div($i, 40)) + 1};
+                }
+                @else {
+                    grid-row: #{math.floor(math.div($i - 1, 40)) + 1};
+                }
             }
         }
+    }
+
+    &:nth-of-type(800) {
+        grid-row: 20;
+    }
+
+    $i: 1;
+    @while ($i < $pix) {
+        &:nth-of-type(#{$i}) {
+            animation: base 2s infinite linear;
+        }
+        $i: $i + 40
     }
 
     $i: 2;
     @while ($i < $pix) {
         &:nth-of-type(#{$i}) {
-            animation: sin-1 2s infinite linear; 
+            animation: sin-5 2s infinite linear; 
+            animation-delay: 0.2s;
         }
         $i: $i + 40
     }
@@ -113,8 +194,8 @@ html, body {
     $i: 3;
     @while ($i < $pix) {
         &:nth-of-type(#{$i}) {
-            animation: sin-2 2s infinite linear; 
-            animation-delay: 0.2s;
+            animation: sin-5 2s infinite linear; 
+            animation-delay: 0.4s;
         }
         $i: $i + 40
     }
@@ -122,8 +203,8 @@ html, body {
     $i: 4;
     @while ($i < $pix) {
         &:nth-of-type(#{$i}) {
-            animation: sin-3 2s infinite linear;
-            animation-delay: 0.4s; 
+            animation: sin-5 2s infinite linear;
+            animation-delay: 0.6s; 
         }
         $i: $i + 40
     }
@@ -131,8 +212,8 @@ html, body {
     $i: 5;
     @while ($i < $pix) {
         &:nth-of-type(#{$i}) {
-            animation: sin-4 2s infinite linear; 
-            animation-delay: 0.6s;
+            animation: sin-5 2s infinite linear; 
+            animation-delay: 0.8s;
         }
         $i: $i + 40
     }
