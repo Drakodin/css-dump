@@ -1,0 +1,5643 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(#1a1477, #4e016d);
+  perspective: 2000px;
+}
+
+#root {
+  position: fixed;
+  height: 75%;
+  top: 10%;
+  left: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-50%);
+}
+
+.pole {
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background: rgb(66, 47, 36);
+}
+
+.ball {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 70% 20%, #ffffff, #d1b200);
+}
+
+.flag-base {
+  display: grid;
+  grid-template-columns: repeat(40, 1fr);
+  width: 320px;
+  height: 160px;
+  position: absolute;
+  top: 30px;
+  left: calc(-20% + 5px);
+  flex-direction: column;
+  flex-wrap: wrap;
+  transform-style: preserve-3d;
+}
+
+@keyframes sin-1 {
+  0% {
+    transform: translateZ(0px) rotateY(0deg);
+  }
+  25% {
+    transform: translateZ(9.3888538862px);
+  }
+  50% {
+    transform: translateZ(0px);
+  }
+  75% {
+    transform: translateZ(-9.3888538862px);
+  }
+  100% {
+    transform: translateZ(0px);
+  }
+}
+@keyframes sin-2 {
+  0% {
+    transform: translateZ(0px) rotateY(0deg);
+  }
+  25% {
+    transform: translateZ(18.7777077724px);
+  }
+  50% {
+    transform: translateZ(0px);
+  }
+  75% {
+    transform: translateZ(-18.7777077724px);
+  }
+  100% {
+    transform: translateZ(0px);
+  }
+}
+@keyframes sin-3 {
+  0% {
+    transform: translateZ(0px) rotateY(0deg);
+  }
+  25% {
+    transform: translateZ(28.1665616586px);
+  }
+  50% {
+    transform: translateZ(0px);
+  }
+  75% {
+    transform: translateZ(-28.1665616586px);
+  }
+  100% {
+    transform: translateZ(0px);
+  }
+}
+@keyframes sin-4 {
+  0% {
+    transform: translateZ(0px) rotateY(0deg);
+  }
+  25% {
+    transform: translateZ(37.5554155448px);
+  }
+  50% {
+    transform: translateZ(0px);
+  }
+  75% {
+    transform: translateZ(-37.5554155448px);
+  }
+  100% {
+    transform: translateZ(0px);
+  }
+}
+@keyframes sin-5 {
+  0% {
+    transform: translateZ(0px) rotateY(0deg);
+  }
+  25% {
+    transform: translateZ(46.944269431px);
+  }
+  50% {
+    transform: translateZ(0px);
+  }
+  75% {
+    transform: translateZ(-46.944269431px);
+  }
+  100% {
+    transform: translateZ(0px);
+  }
+}
+/* The Sass for the 800 pixels of the flag */
+.flag-row-px {
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+}
+.flag-row-px:nth-of-type(1) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(2) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(3) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(4) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(5) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(6) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(7) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(8) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(9) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(10) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(11) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(12) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(13) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(14) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(15) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(16) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(17) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(18) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(19) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(20) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(21) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(22) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(23) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(24) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(25) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(26) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(27) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(28) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(29) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(30) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(31) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(32) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(33) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(34) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(35) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(36) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(37) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(38) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(39) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(40) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(41) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(42) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(43) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(44) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(45) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(46) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(47) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(48) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(49) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(50) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(51) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(52) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(53) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(54) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(55) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(56) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(57) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(58) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(59) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(60) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(61) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(62) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(63) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(64) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(65) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(66) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(67) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(68) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(69) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(70) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(71) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(72) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(73) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(74) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(75) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(76) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(77) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(78) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(79) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(80) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(81) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(82) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(83) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(84) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(85) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(86) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(87) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(88) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(89) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(90) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(91) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(92) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(93) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(94) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(95) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(96) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(97) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(98) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(99) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(100) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(101) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(102) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(103) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(104) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(105) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(106) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(107) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(108) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(109) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(110) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(111) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(112) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(113) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(114) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(115) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(116) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(117) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(118) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(119) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(120) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(121) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(122) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(123) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(124) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(125) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(126) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(127) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(128) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(129) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(130) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(131) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(132) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(133) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(134) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(135) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(136) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(137) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(138) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(139) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(140) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(141) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(142) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(143) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(144) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(145) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(146) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(147) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(148) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(149) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(150) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(151) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(152) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(153) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(154) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(155) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(156) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(157) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(158) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(159) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(160) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(161) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(162) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(163) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(164) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(165) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(166) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(167) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(168) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(169) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(170) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(171) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(172) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(173) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(174) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(175) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(176) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(177) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(178) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(179) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(180) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(181) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(182) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(183) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(184) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(185) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(186) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(187) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(188) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(189) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(190) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(191) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(192) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(193) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(194) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(195) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(196) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(197) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(198) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(199) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(200) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(201) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(202) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(203) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(204) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(205) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(206) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(207) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(208) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(209) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(210) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(211) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(212) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(213) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(214) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(215) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(216) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(217) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(218) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(219) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(220) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(221) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(222) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(223) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(224) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(225) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(226) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(227) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(228) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(229) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(230) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(231) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(232) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(233) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(234) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(235) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(236) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(237) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(238) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(239) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(240) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(241) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(242) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(243) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(244) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(245) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(246) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(247) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(248) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(249) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(250) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(251) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(252) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(253) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(254) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(255) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(256) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(257) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(258) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(259) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(260) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(261) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(262) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(263) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(264) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(265) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(266) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(267) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(268) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(269) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(270) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(271) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(272) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(273) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(274) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(275) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(276) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(277) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(278) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(279) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(280) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(281) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(282) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(283) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(284) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(285) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(286) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(287) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(288) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(289) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(290) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(291) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(292) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(293) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(294) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(295) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(296) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(297) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(298) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(299) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(300) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(301) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(302) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(303) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(304) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(305) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(306) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(307) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(308) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(309) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(310) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(311) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(312) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(313) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(314) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(315) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(316) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(317) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(318) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(319) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(320) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(321) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(322) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(323) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(324) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(325) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(326) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(327) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(328) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(329) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(330) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(331) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(332) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(333) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(334) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(335) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(336) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(337) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(338) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(339) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(340) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(341) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(342) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(343) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(344) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(345) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(346) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(347) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(348) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(349) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(350) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(351) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(352) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(353) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(354) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(355) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(356) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(357) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(358) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(359) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(360) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(361) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(362) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(363) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(364) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(365) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(366) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(367) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(368) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(369) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(370) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(371) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(372) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(373) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(374) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(375) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(376) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(377) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(378) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(379) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(380) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(381) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(382) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(383) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(384) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(385) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(386) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(387) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(388) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(389) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(390) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(391) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(392) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(393) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(394) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(395) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(396) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(397) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(398) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(399) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(400) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(401) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(402) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(403) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(404) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(405) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(406) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(407) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(408) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(409) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(410) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(411) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(412) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(413) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(414) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(415) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(416) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(417) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(418) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(419) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(420) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(421) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(422) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(423) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(424) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(425) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(426) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(427) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(428) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(429) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(430) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(431) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(432) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(433) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(434) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(435) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(436) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(437) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(438) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(439) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(440) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(441) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(442) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(443) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(444) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(445) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(446) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(447) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(448) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(449) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(450) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(451) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(452) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(453) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(454) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(455) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(456) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(457) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(458) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(459) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(460) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(461) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(462) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(463) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(464) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(465) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(466) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(467) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(468) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(469) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(470) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(471) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(472) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(473) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(474) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(475) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(476) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(477) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(478) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(479) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(480) {
+  background-color: #fff;
+}
+.flag-row-px:nth-of-type(481) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(482) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(483) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(484) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(485) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(486) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(487) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(488) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(489) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(490) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(491) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(492) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(493) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(494) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(495) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(496) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(497) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(498) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(499) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(500) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(501) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(502) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(503) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(504) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(505) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(506) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(507) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(508) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(509) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(510) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(511) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(512) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(513) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(514) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(515) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(516) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(517) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(518) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(519) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(520) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(521) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(522) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(523) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(524) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(525) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(526) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(527) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(528) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(529) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(530) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(531) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(532) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(533) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(534) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(535) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(536) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(537) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(538) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(539) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(540) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(541) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(542) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(543) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(544) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(545) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(546) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(547) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(548) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(549) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(550) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(551) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(552) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(553) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(554) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(555) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(556) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(557) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(558) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(559) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(560) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(561) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(562) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(563) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(564) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(565) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(566) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(567) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(568) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(569) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(570) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(571) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(572) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(573) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(574) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(575) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(576) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(577) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(578) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(579) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(580) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(581) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(582) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(583) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(584) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(585) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(586) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(587) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(588) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(589) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(590) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(591) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(592) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(593) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(594) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(595) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(596) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(597) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(598) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(599) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(600) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(601) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(602) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(603) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(604) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(605) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(606) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(607) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(608) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(609) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(610) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(611) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(612) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(613) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(614) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(615) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(616) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(617) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(618) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(619) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(620) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(621) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(622) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(623) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(624) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(625) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(626) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(627) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(628) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(629) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(630) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(631) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(632) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(633) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(634) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(635) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(636) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(637) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(638) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(639) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(640) {
+  background-color: #f19cbb;
+}
+.flag-row-px:nth-of-type(641) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(642) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(643) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(644) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(645) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(646) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(647) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(648) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(649) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(650) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(651) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(652) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(653) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(654) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(655) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(656) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(657) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(658) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(659) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(660) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(661) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(662) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(663) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(664) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(665) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(666) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(667) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(668) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(669) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(670) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(671) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(672) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(673) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(674) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(675) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(676) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(677) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(678) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(679) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(680) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(681) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(682) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(683) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(684) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(685) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(686) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(687) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(688) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(689) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(690) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(691) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(692) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(693) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(694) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(695) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(696) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(697) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(698) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(699) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(700) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(701) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(702) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(703) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(704) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(705) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(706) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(707) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(708) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(709) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(710) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(711) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(712) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(713) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(714) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(715) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(716) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(717) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(718) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(719) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(720) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(721) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(722) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(723) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(724) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(725) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(726) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(727) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(728) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(729) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(730) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(731) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(732) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(733) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(734) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(735) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(736) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(737) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(738) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(739) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(740) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(741) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(742) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(743) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(744) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(745) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(746) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(747) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(748) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(749) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(750) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(751) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(752) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(753) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(754) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(755) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(756) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(757) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(758) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(759) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(760) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(761) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(762) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(763) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(764) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(765) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(766) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(767) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(768) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(769) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(770) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(771) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(772) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(773) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(774) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(775) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(776) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(777) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(778) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(779) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(780) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(781) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(782) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(783) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(784) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(785) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(786) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(787) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(788) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(789) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(790) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(791) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(792) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(793) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(794) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(795) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(796) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(797) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(798) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(799) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(800) {
+  background-color: #73c2fb;
+}
+.flag-row-px:nth-of-type(2) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(42) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(82) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(122) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(162) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(202) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(242) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(282) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(322) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(362) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(402) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(442) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(482) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(522) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(562) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(602) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(642) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(682) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(722) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(762) {
+  animation: sin-1 2s infinite linear;
+}
+.flag-row-px:nth-of-type(3) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(43) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(83) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(123) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(163) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(203) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(243) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(283) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(323) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(363) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(403) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(443) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(483) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(523) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(563) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(603) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(643) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(683) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(723) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(763) {
+  animation: sin-2 2s infinite linear;
+  animation-delay: 0.2s;
+}
+.flag-row-px:nth-of-type(4) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(44) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(84) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(124) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(164) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(204) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(244) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(284) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(324) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(364) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(404) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(444) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(484) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(524) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(564) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(604) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(644) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(684) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(724) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(764) {
+  animation: sin-3 2s infinite linear;
+  animation-delay: 0.4s;
+}
+.flag-row-px:nth-of-type(5) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(45) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(85) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(125) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(165) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(205) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(245) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(285) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(325) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(365) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(405) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(445) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(485) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(525) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(565) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(605) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(645) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(685) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(725) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(765) {
+  animation: sin-4 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.flag-row-px:nth-of-type(6) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(7) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(8) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(9) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(10) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(11) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(12) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(13) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(14) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(15) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(16) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(17) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(18) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(19) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(20) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(21) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(22) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(23) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(24) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(25) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(26) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(27) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(28) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(29) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(30) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(31) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(32) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(33) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(34) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(35) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(36) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(37) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(38) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(39) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(40) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(46) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(47) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(48) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(49) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(50) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(51) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(52) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(53) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(54) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(55) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(56) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(57) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(58) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(59) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(60) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(61) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(62) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(63) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(64) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(65) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(66) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(67) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(68) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(69) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(70) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(71) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(72) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(73) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(74) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(75) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(76) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(77) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(78) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(79) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(80) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(86) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(87) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(88) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(89) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(90) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(91) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(92) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(93) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(94) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(95) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(96) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(97) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(98) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(99) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(100) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(101) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(102) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(103) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(104) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(105) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(106) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(107) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(108) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(109) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(110) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(111) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(112) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(113) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(114) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(115) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(116) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(117) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(118) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(119) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(120) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(126) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(127) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(128) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(129) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(130) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(131) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(132) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(133) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(134) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(135) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(136) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(137) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(138) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(139) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(140) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(141) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(142) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(143) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(144) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(145) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(146) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(147) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(148) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(149) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(150) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(151) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(152) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(153) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(154) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(155) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(156) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(157) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(158) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(159) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(160) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(166) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(167) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(168) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(169) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(170) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(171) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(172) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(173) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(174) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(175) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(176) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(177) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(178) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(179) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(180) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(181) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(182) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(183) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(184) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(185) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(186) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(187) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(188) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(189) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(190) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(191) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(192) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(193) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(194) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(195) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(196) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(197) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(198) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(199) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(200) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(206) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(207) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(208) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(209) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(210) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(211) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(212) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(213) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(214) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(215) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(216) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(217) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(218) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(219) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(220) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(221) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(222) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(223) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(224) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(225) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(226) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(227) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(228) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(229) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(230) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(231) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(232) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(233) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(234) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(235) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(236) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(237) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(238) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(239) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(240) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(246) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(247) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(248) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(249) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(250) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(251) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(252) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(253) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(254) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(255) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(256) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(257) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(258) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(259) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(260) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(261) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(262) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(263) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(264) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(265) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(266) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(267) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(268) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(269) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(270) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(271) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(272) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(273) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(274) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(275) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(276) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(277) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(278) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(279) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(280) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(286) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(287) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(288) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(289) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(290) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(291) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(292) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(293) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(294) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(295) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(296) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(297) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(298) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(299) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(300) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(301) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(302) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(303) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(304) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(305) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(306) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(307) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(308) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(309) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(310) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(311) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(312) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(313) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(314) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(315) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(316) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(317) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(318) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(319) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(320) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(326) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(327) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(328) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(329) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(330) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(331) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(332) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(333) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(334) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(335) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(336) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(337) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(338) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(339) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(340) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(341) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(342) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(343) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(344) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(345) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(346) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(347) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(348) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(349) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(350) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(351) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(352) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(353) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(354) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(355) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(356) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(357) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(358) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(359) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(360) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(366) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(367) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(368) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(369) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(370) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(371) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(372) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(373) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(374) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(375) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(376) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(377) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(378) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(379) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(380) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(381) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(382) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(383) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(384) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(385) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(386) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(387) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(388) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(389) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(390) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(391) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(392) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(393) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(394) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(395) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(396) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(397) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(398) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(399) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(400) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(406) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(407) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(408) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(409) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(410) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(411) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(412) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(413) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(414) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(415) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(416) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(417) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(418) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(419) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(420) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(421) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(422) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(423) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(424) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(425) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(426) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(427) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(428) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(429) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(430) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(431) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(432) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(433) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(434) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(435) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(436) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(437) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(438) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(439) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(440) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(446) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(447) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(448) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(449) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(450) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(451) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(452) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(453) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(454) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(455) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(456) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(457) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(458) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(459) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(460) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(461) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(462) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(463) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(464) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(465) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(466) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(467) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(468) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(469) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(470) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(471) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(472) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(473) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(474) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(475) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(476) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(477) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(478) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(479) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(480) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(486) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(487) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(488) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(489) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(490) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(491) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(492) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(493) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(494) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(495) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(496) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(497) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(498) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(499) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(500) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(501) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(502) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(503) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(504) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(505) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(506) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(507) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(508) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(509) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(510) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(511) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(512) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(513) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(514) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(515) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(516) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(517) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(518) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(519) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(520) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(526) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(527) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(528) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(529) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(530) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(531) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(532) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(533) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(534) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(535) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(536) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(537) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(538) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(539) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(540) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(541) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(542) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(543) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(544) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(545) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(546) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(547) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(548) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(549) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(550) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(551) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(552) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(553) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(554) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(555) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(556) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(557) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(558) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(559) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(560) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(566) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(567) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(568) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(569) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(570) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(571) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(572) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(573) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(574) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(575) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(576) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(577) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(578) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(579) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(580) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(581) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(582) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(583) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(584) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(585) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(586) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(587) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(588) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(589) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(590) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(591) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(592) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(593) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(594) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(595) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(596) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(597) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(598) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(599) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(600) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(606) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(607) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(608) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(609) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(610) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(611) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(612) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(613) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(614) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(615) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(616) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(617) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(618) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(619) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(620) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(621) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(622) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(623) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(624) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(625) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(626) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(627) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(628) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(629) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(630) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(631) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(632) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(633) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(634) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(635) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(636) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(637) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(638) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(639) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(640) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(646) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(647) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(648) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(649) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(650) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(651) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(652) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(653) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(654) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(655) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(656) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(657) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(658) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(659) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(660) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(661) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(662) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(663) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(664) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(665) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(666) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(667) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(668) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(669) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(670) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(671) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(672) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(673) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(674) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(675) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(676) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(677) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(678) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(679) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(680) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(686) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(687) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(688) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(689) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(690) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(691) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(692) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(693) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(694) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(695) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(696) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(697) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(698) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(699) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(700) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(701) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(702) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(703) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(704) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(705) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(706) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(707) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(708) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(709) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(710) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(711) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(712) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(713) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(714) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(715) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(716) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(717) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(718) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(719) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(720) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(726) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(727) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(728) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(729) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(730) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(731) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(732) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(733) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(734) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(735) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(736) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(737) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(738) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(739) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(740) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(741) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(742) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(743) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(744) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(745) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(746) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(747) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(748) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(749) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(750) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(751) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(752) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(753) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(754) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(755) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(756) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(757) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(758) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(759) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(760) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+.flag-row-px:nth-of-type(766) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1s;
+}
+.flag-row-px:nth-of-type(767) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.2s;
+}
+.flag-row-px:nth-of-type(768) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.4s;
+}
+.flag-row-px:nth-of-type(769) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.6s;
+}
+.flag-row-px:nth-of-type(770) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 1.8s;
+}
+.flag-row-px:nth-of-type(771) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2s;
+}
+.flag-row-px:nth-of-type(772) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.2s;
+}
+.flag-row-px:nth-of-type(773) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.4s;
+}
+.flag-row-px:nth-of-type(774) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.6s;
+}
+.flag-row-px:nth-of-type(775) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 2.8s;
+}
+.flag-row-px:nth-of-type(776) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3s;
+}
+.flag-row-px:nth-of-type(777) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.2s;
+}
+.flag-row-px:nth-of-type(778) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.4s;
+}
+.flag-row-px:nth-of-type(779) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.6s;
+}
+.flag-row-px:nth-of-type(780) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 3.8s;
+}
+.flag-row-px:nth-of-type(781) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4s;
+}
+.flag-row-px:nth-of-type(782) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.2s;
+}
+.flag-row-px:nth-of-type(783) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.4s;
+}
+.flag-row-px:nth-of-type(784) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.6s;
+}
+.flag-row-px:nth-of-type(785) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 4.8s;
+}
+.flag-row-px:nth-of-type(786) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5s;
+}
+.flag-row-px:nth-of-type(787) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.2s;
+}
+.flag-row-px:nth-of-type(788) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.4s;
+}
+.flag-row-px:nth-of-type(789) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.6s;
+}
+.flag-row-px:nth-of-type(790) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 5.8s;
+}
+.flag-row-px:nth-of-type(791) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6s;
+}
+.flag-row-px:nth-of-type(792) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.2s;
+}
+.flag-row-px:nth-of-type(793) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.4s;
+}
+.flag-row-px:nth-of-type(794) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.6s;
+}
+.flag-row-px:nth-of-type(795) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 6.8s;
+}
+.flag-row-px:nth-of-type(796) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7s;
+}
+.flag-row-px:nth-of-type(797) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.2s;
+}
+.flag-row-px:nth-of-type(798) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.4s;
+}
+.flag-row-px:nth-of-type(799) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.6s;
+}
+.flag-row-px:nth-of-type(800) {
+  animation: sin-5 2s infinite linear;
+  animation-delay: 7.8s;
+}
+
+/*# sourceMappingURL=flag.css.map */
